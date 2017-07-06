@@ -1,0 +1,31 @@
+{
+  "name": "dynamic-bit-array",
+  "version": "0.0.1",
+  "description": "A Bit Array that grows as you set more bits",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape **/*.test.js | faucet"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayastreb/dynamic-bit-array.git"
+  },
+  "keywords": [
+    "bit-array",
+    "bit array",
+    "bit vector",
+    "bit map",
+    "bit string",
+    "data structure"
+  ],
+  "author": "Anatoliy Yastreb <anatoliy.yastreb@gmail.com> (https://ayastreb.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ayastreb/dynamic-bit-array/issues"
+  },
+  "homepage": "https://github.com/ayastreb/dynamic-bit-array#readme",
+  "devDependencies": {
+    "faucet": "0.0.1",
+    "tape": "^4.7.0"
+  }
+}
