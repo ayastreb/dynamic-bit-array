@@ -125,10 +125,12 @@ class BitArray {
    */
   toString(skipLeadingZero = false) {
     let string = ''
-    for (let position = this.length - 1; position >= 0; position--) {
-      const isBitSet = this.get(position)
-      if (skipLeadingZero && string.length === 0 && !isBitSet) continue
-      string += isBitSet ? '1' : '0'
+    for (let index = this.words.length - 1; index >= 0; index --) {
+      for (let position = 31; position >= 0; position--) {
+        const isBitSet = ((this.words[index] >> position) & 1) !== 0
+        if (skipLeadingZero && string.length === 0 && !isBitSet) continue
+        string += isBitSet ? '1' : '0'
+      }
     }
 
     return string
