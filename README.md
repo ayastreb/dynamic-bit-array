@@ -10,7 +10,7 @@ npm install --save dynamic-bit-array
 
 ## Usage
 
-```
+```javascript
 const BitArray = require('dynamic-bit-array')
 
 const array = new BitArray()
