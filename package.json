@@ -1,6 +1,6 @@
 {
   "name": "dynamic-bit-array",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Bit Array that grows as you set more bits",
   "main": "index.js",
   "scripts": {
