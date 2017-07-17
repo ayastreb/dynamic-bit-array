@@ -125,7 +125,7 @@ class BitArray {
    */
   toString(skipLeadingZero = false) {
     let string = ''
-    for (let index = this.words.length - 1; index >= 0; index --) {
+    for (let index = this.words.length - 1; index >= 0; index--) {
       for (let position = 31; position >= 0; position--) {
         const isBitSet = ((this.words[index] >> position) & 1) !== 0
         if (skipLeadingZero && string.length === 0 && !isBitSet) continue
@@ -142,7 +142,27 @@ class BitArray {
     }
   }
 
-  static fromString(string) {}
+  /**
+   * Create new bit array from given binary string.
+   *
+   * @param {string} string
+   * @returns BitArray
+   */
+  static fromString(string) {
+    let start = 0
+    let end = string.length % 32
+    const parsedWords = []
+    while (end <= string.length) {
+      parsedWords.push(parseInt(string.substr(start, end), 2))
+      start = end
+      end += 32
+    }
+
+    const array = new BitArray(parsedWords.length * 32)
+    array.words.set(parsedWords.reverse())
+
+    return array
+  }
 
   /**
    * Get index of word where bit with given position should be.
